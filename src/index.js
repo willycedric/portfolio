@@ -1,10 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Header from './components/Header'
+import Header from './components/Header';
+import Hero from './components/Hero';
+const name ="Willy DONGMO";
 ReactDOM.render(
   <React.StrictMode>
-    <Header name ="Willy DONGMO" menuEntries={["Home", "Services", "Projects", "About", "Contact"]}  />
+    <Header name ={name} menuEntries={["Home", "Services", "Projects", "About", "Contact"]}  />
+    <Hero name={name} />
   </React.StrictMode>,
   document.getElementById('root')
 );

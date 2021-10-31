@@ -1,23 +1,6 @@
 import React from 'react';
 import './index.css'
-
-const buildHeroName = (name ) =>{
-
-  if(name.length === 0 || name.split(' ').length<2)
-      throw new Error(`${name} does not matches the expected firstName lastName template`)
-  const firstPart = name.split(' ')[0];
-  const secondPart = name.split(' ')[1];
-  const firstPartFirstLetter = firstPart.charAt(0);
-  const secondPartFirstLetter = secondPart.charAt(0);
-  const firstPartRemainingLetters = firstPart.slice(1, firstPart.length);
-  const secondPartRemainingLetters= secondPart.slice(1, secondPart.length);
-  return {
-            firstPartFirstLetter, 
-            secondPartFirstLetter, 
-            firstPartRemainingLetters, 
-            secondPartRemainingLetters
-  }
-}
+import { heroNameBuilder } from '../../Helpers'
 const Header = ({name, menuEntries})=>{
 
     const {
@@ -25,7 +8,7 @@ const Header = ({name, menuEntries})=>{
       secondPartFirstLetter, 
       firstPartRemainingLetters, 
       secondPartRemainingLetters
-} = buildHeroName(name)
+} = heroNameBuilder(name)
     return <section id="header">
     <div className="header container">
       <div className="nav-bar">
